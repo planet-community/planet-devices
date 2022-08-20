@@ -2,7 +2,7 @@ Astro-Slide:
   - '(astroslide|Astro Slide|astro slide|Astro|astro)'
 
 Cosmo-Communicator:
-  - '(cosmocom|Cosmo Communicator|cosmo communicator|Cosmo|cosmo|codi|CoDi|cover display|Cover Display|external display|external screen)'
+  - '(cosmocom|Cosmo Communicator|cosmo communicator|Cosmo|cosmo)'
 
 Gemini-PDA:
   - '(geminipda|Gemini PDA|gemini pda|Gemini)'
@@ -10,8 +10,17 @@ Gemini-PDA:
 Android-FW:
   - '(Android|android)'
 
-Sound-Issue:
-  - '(Speaker|speaker|Audio|audio|Phase|phase)'
+Speaker-Issue:
+  - '(Speaker|speaker|Speakers|speakers|Audio|audio|Phase|phase)'
+
+Mobile-Data-Issue:
+  - '(mobile data|Mobile data|Mobile Data|data|Data|3G|4G|5G)'
+
+Voice-Calls-Issue:
+  - '(Calls|calls|Voice calls|Voice call|Voice Calls|Voice Call)'
+
+Microphone-Issue:
+  - '(mic|Mic|Microphone|microphone)'
 
 Gemian-FW:
   - '(Gemian|gemian|debian|Debian|buster|Buster|bullseye|Bullseye)'

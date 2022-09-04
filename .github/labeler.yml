@@ -11,16 +11,19 @@ Android-FW:
   - '(Android|android)'
 
 Speaker-Issue:
-  - '(Speaker|speaker|Speakers|speakers|Audio|audio|Phase|phase)'
+  - '(Speaker|speaker|Speakers|speakers|Audio|audio|Phase|phase|audio channel|Audio channel)'
 
 Mobile-Data-Issue:
-  - '(mobile data|Mobile data|Mobile Data|data|Data|3G|4G|5G)'
+  - '(mobile data|Mobile data|Mobile Data|data|Data|3G|4G|LTE|5G)'
 
 Voice-Calls-Issue:
-  - '(Calls|calls|Voice calls|Voice call|Voice Calls|Voice Call)'
+  - '(Calls|calls|Voice calls|Voice call|Voice Calls|Voice Call|VoLTE|volte)'
 
 Microphone-Issue:
   - '(mic|Mic|Microphone|microphone)'
 
 Gemian-FW:
   - '(Gemian|gemian|debian|Debian|buster|Buster|bullseye|Bullseye)'
+
+Cosmo-CoDi:
+  - '(codi|CODI|CoDi|CoDiOS|cover display|front display|external display)'

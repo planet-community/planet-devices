@@ -1,7 +1,7 @@
 # planet-devices
 
 Repository for Planet Computers devices. Use this for feature requests, bugs,
-and *constructive* feedback. 
+and *constructive* feedback. It also contains a community wiki.
 
 As a interim measure, I (@shymega) setup this issue tracker to later be
 maintained officially by Planet Computers, for the community to report
@@ -16,3 +16,11 @@ Respect and politeness are a must. No one deserves to be personally attacked, or
 accused of being a Planet 'shill'.
 
 Enjoy!
+
+Contents:
+
+- **[Issues](https://github.com/shymega/planet-devices/issues)**
+    + [Gemini issues](https://github.com/shymega/planet-devices/labels/Gemini-PDA)
+    + [Cosmo Communicator issues](https://github.com/shymega/planet-devices/labels/Cosmo-Communicator)
+    + [Astro Slide issues](https://github.com/shymega/planet-devices/labels/Astro-Slide)
+- **[Community wiki](https://github.com/shymega/planet-devices/wiki)**

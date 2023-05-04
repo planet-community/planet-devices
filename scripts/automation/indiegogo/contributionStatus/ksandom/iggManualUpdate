@@ -1,0 +1,7 @@
+#!/bin/bash
+# Manually update the status of the astro slide.
+
+# Where to save the output.
+FILE=~/Documents/iggStatus
+
+sed -i "s/^Status:.*$/Status:      $(iggStatus) \(manually updated\)/g" "$FILE"

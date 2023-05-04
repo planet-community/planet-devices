@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# Edit this line with the path to your configuration file
+CONFIG=$(cat ~/Doc/astro-contrib.json)
+
+USER_ID=$(echo $CONFIG | jq -r '.user_id')
+CONTRIB_ID=$(echo $CONFIG | jq -r '.contrib_id')
+COOKIE=$(echo $CONFIG | jq -r '.cookie')
+
+STATUS="Info"
+DELIVERY_STATUS=$(curl -s "https://www.indiegogo.com/private_api/accounts/$USER_ID/contributions/$CONTRIB_ID" \
+  -H "authority: www.indiegogo.com" \
+  -H "pragma: no-cache" \
+  -H "cache-control: no-cache" \
+  -H 'sec-ch-ua: "Chromium";v="98", " Not A;Brand";v="99"' \
+  -H "x-locale: en" \
+  -H "dnt: 1" \
+  -H "sec-ch-ua-mobile: ?0" \
+  -H "user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.121 Safari/537.36" \
+  -H "accept: application/json, text/plain, */*" \
+  -H "x-has-account: true" \
+  -H 'sec-ch-ua-platform: "Linux"' \
+  -H "sec-fetch-site: same-origin" \
+  -H "sec-fetch-mode: cors" \
+  -H "sec-fetch-dest: empty" \
+  -H "referer: https://www.indiegogo.com/individuals/$USER_ID/contributions/$CONTRIB_ID" \
+  -H "accept-language: en-US,en;q=0.9" \
+  -H "cookie: $COOKIE" \
+  --compressed \
+  | jq -r '.response.display_status.overall')
+
+case $DELIVERY_STATUS in
+  "order_placed")
+    STATUS="Idle"
+    DELIVERY_STATUS="Pending";;
+  "order_locked")
+    STATUS="Critical"
+    DELIVERY_STATUS="Locked!!";;
+  "")
+    STATUS="Info"
+    DELIVERY_STATUS="Error";;
+esac
+
+# Json format used by i3status-rust
+# Make your own if you have different needs
+echo "{\"state\": \"$STATUS\", \"text\": \"Astro delivery: $TEXT\"}"

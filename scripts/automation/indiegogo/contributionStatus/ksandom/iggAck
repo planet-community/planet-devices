@@ -1,0 +1,8 @@
+#!/bin/bash
+# Acknowledge the status of the astro slide. So it is no longer marked as changed.
+
+# Where to save the output.
+FILE_STATUS=~/Documents/iggStatus
+FILE_EXPECTED=~/Documents/expectedIGGStatus
+
+grep '^Status:.*$' "$FILE_STATUS" | awk '{print $2}' > "$FILE_EXPECTED"

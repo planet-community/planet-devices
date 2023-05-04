@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo "Parameter: $1"
+
+case $1 in
+    "") # Default. Run scrcpy without options.
+        scrcpy
+    ;;
+    "gemini") # Gemini, horizontally oriented.
+        scrcpy --lock-video-orientation=0 --crop=2060:1080:0:0
+    ;;
+    "gemini-v") # Gemini, vertically oriented.
+        scrcpy --lock-video-orientation=3 --crop=2060:1080:0:0
+    ;;
+    "gemini-fh") # Gemini, fix horizontal when an app is doing something stupid.
+        scrcpy --lock-video-orientation=3 --crop=2060:1080:0:0
+    ;;
+    "gemini-fv") # Gemini, fix vertical when an app is doing something stupid.
+        scrcpy --lock-video-orientation=3 --crop=2060:1080:0:0
+    ;;
+    *)
+        #echo -e "Parameter\tDescription"
+
+        grep '"[)] #' "$0" | grep -v grep | sed 's/""/"(No parameters.)"/g; s/^ *"//g; s/") # /\t/g' | column --table --separator "$(echo -e "\t")"
+    ;;
+esac

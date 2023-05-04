@@ -1,0 +1,8 @@
+#!/bin/bash
+# Display whether the status of the astro slide has changed. Can be acknowledged with iggAck.
+
+# Where to save the output.
+FILE_STATUS=~/Documents/iggStatus
+FILE_EXPECTED=~/Documents/expectedIGGStatus
+
+if grep -q $(cat "$FILE_EXPECTED") "$FILE_STATUS"; then echo '.'; else echo "Changed"; fi
